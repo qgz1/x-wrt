@@ -1374,11 +1374,12 @@ define Device/nokia_ea0326gmp
 endef
 TARGET_DEVICES += nokia_ea0326gmp
 
-define Device/nradio_c8-660
-  DEVICE_VENDOR := NRadio
-  DEVICE_MODEL := C8-660
-  DEVICE_DTS := mt7981b-nradio-c8-660
-  DEVICE_DTS_DIR := ../dts
+define Device/nradio_wt9108_No2-manper
+  DEVICE_VENDOR := NRADIO
+  DEVICE_MODEL := C8-668-No2-manper
+  DEVICE_DTS := mt7981-nradio-wt9108-No2
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := nradio,wt9108
   UBINIZE_OPTS := -E 5
   BLOCKSIZE := 128k
   PAGESIZE := 2048
@@ -1388,7 +1389,7 @@ define Device/nradio_c8-660
   IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 endef
-TARGET_DEVICES += nradio_c8-660
+TARGET_DEVICES += nradio_wt9108_No2-manper
 
 define Device/openembed_som7981
   DEVICE_VENDOR := OpenEmbed
